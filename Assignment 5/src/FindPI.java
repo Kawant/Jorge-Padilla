@@ -3,7 +3,8 @@ public class FindPI
 {
 	public static void main(String[] args)
 	{
-		int count = 999999999;
+		int count = 2500000;
+		double seconds = 0;
 	    double pi = 0;
 	    double denominator = 1;
 	 
@@ -17,6 +18,8 @@ public class FindPI
 	    	denominator += 2;
 	    }
 	    pi *= 4;
-	    System.out.println(pi);
+	    
+	    System.out.println("PI = " + pi + " after " + count + " iterations.");
+	    System.out.println("It took " + seconds + " to complete this operation.");
 	}
 }
