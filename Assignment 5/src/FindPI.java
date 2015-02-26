@@ -4,7 +4,7 @@ public class FindPI
 	public static void main(String[] args)
 	{
 		int count = 2500000;
-		double seconds = 0;
+		long start = System.currentTimeMillis();
 	    double pi = 0;
 	    double denominator = 1;
 	 
@@ -19,7 +19,11 @@ public class FindPI
 	    }
 	    pi *= 4;
 	    
+	    long elapsedTimeMillies = System.currentTimeMillis() - start;
+	    float elapsedTimeSecs = elapsedTimeMillies/1000F;
+	    
 	    System.out.println("PI = " + pi + " after " + count + " iterations.");
-	    System.out.println("It took " + seconds + " to complete this operation.");
+	    System.out.println("It took " + elapsedTimeSecs + " seconds to complete this operation.");
 	}
+	
 }
