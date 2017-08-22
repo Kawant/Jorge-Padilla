@@ -1,0 +1,96 @@
+#include <iostream>
+#include <iomanip>
+	
+using namespace std;
+
+#include ".\Rational.h"
+
+RATIONAL GLOBAL1(100,1);
+
+//-------------------------------------------------------
+int main()
+//-------------------------------------------------------
+{
+   void MyMain();
+
+   static RATIONAL STATIC1(200,1);
+
+   RATIONAL *HEAP1 = new RATIONAL (300,1);
+
+   MyMain();
+
+   RATIONAL AUTO1(400,1);
+
+   delete HEAP1;
+
+   system("PAUSE");
+   return( 0 );
+}
+
+RATIONAL GLOBAL2(500,1);
+
+//-------------------------------------------------------
+void MyMain()
+//-------------------------------------------------------
+{
+   cout << "Beginning MyMain()" << endl;
+   
+   static RATIONAL STATIC2(600,1);
+   
+   RATIONAL AUTO2(700,1);
+   
+   RATIONAL *HEAP2 = new RATIONAL (800,1);
+                                                         
+   cout << "1. sizeof(RATIONAL) = " << sizeof(RATIONAL) << endl;
+
+{
+   cout << "2. Test Input() and Print()" << endl;
+
+   RATIONAL r;
+
+   cout << "r? "; r.Input();
+   cout << "r = "; r.Print(); cout << endl;
+}
+{
+   cout << "3. Test Add()" << endl;
+
+   RATIONAL r,LHS(-23,75),RHS(-77,-150);
+
+   r = LHS.Add(RHS);
+   cout << "LHS+RHS = "; r.Print(); cout << endl;
+   cout << "LHS+RHS = "; LHS.Add(RHS).Print(); cout << endl;
+}
+{
+   cout << "4. Test Sub()" << endl;
+
+   RATIONAL r,LHS(-23,75),RHS(-77,-150);
+
+   LHS.Sub(RHS,r);
+   cout << "LHS-RHS = "; r.Print(); cout << endl;
+}
+{
+   cout << "5. Test Mul()" << endl;
+   
+   RATIONAL rs[] =
+   {
+      RATIONAL( -1,  2),
+      *&RATIONAL(  2, -4),
+      *(new RATIONAL(  4, 10))
+   };
+
+   RATIONAL *product = new RATIONAL(-1,-1);
+
+   for (int i = 0; i <= sizeof(rs)/sizeof(RATIONAL)-1; i++)
+   {
+      *product = RATIONAL::Mul(rs[i],*product);
+      cout << " i = " << i << ", partial product = "; product->Print(); cout << endl;
+   }
+
+   delete product;
+
+}
+
+   delete HEAP2;
+
+   cout << "Ending MyMain()" << endl;
+}
