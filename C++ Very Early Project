@@ -1,0 +1,79 @@
+public: 
+	void Welcome_Message ()
+	{
+		cout << "Hello Universe! Welcome to the Sol System" << endl;
+	} // end of function
+	void Astrophysical_Data()
+	{
+		cout << "An astronimical unit (AU) is the distance between Sol and Terra. Said distance is: 149,597,870,700 meters" << endl
+			 << "One light-year is roughly 9 trillion kilometers." << endl
+			 << "One parsec is about 3.26 light-years or 31 trillion kilometers" << endl
+			 << "The speed of light can be rounded up to be 300 million meters per second";
+	} // end of function
+}; // end of class
+
+int main ()
+{
+	char body; //Celestial body
+
+	Sol_System mySolSystem;
+	mySolSystem.Welcome_Message();
+
+	cout << "Please type in the name of the celestial body you wish to learn about" << endl;
+
+	//enum body {SOL, MERCURY, VENUS, TERRA, MARS, JUPITER, SATURN, URANUS, NEPTUNE, PLUTO};
+	while ((body = cin.get()) != EOF )
+	{
+		switch(body)
+		{
+			case 'SOL':
+			case 'sol':
+				cout << "Main star of the Sol System. " << endl
+					 << "Name: Sol" << endl
+					 << "Age: 4.568 billion years" << endl
+					 << "Distance from Galactic Center: 27,200 light-years or ~8,340 parsecs." << endl
+					 << "Radius: 695,700 km" << endl
+					 << "Mass: (1.98855 ± 0.00025) * 1030 kg" << endl
+					 << "Volume: 1.41 * 10^18 km3" << endl
+					 << "Core Temperature: 15,700,000 K" << endl
+					 << "Corona Temperature: ~5,000,000 K" << endl
+					 << "Star Type: Yellow Dwarf" << endl
+					 << endl;
+				break;
+			case 'MER':
+				cout << "" << endl;
+				break;
+			case 'VEN':
+				cout << "" << endl;
+				break;
+			case 'TER':
+				cout << "" << endl;
+				break;
+			case 'MAR':
+				cout << "" << endl;
+				break;
+			case 'JUP':
+				cout << "" << endl;
+				break;
+			case 'SAT':
+				cout << "" << endl;
+				break;
+			case 'URA':
+				cout << "" << endl;
+				break;
+			case 'NEP':
+				cout << "" << endl;
+				break;
+			case 'PLU':
+				cout << "" << endl;
+				break;
+			default:
+				cout << "Celestial body is not in the Sol System" << endl 
+					<< "Enter another body" << endl;
+				break;
+		} // end of switch
+	} // end of while
+
+	system("pause");
+	return 0;
+} // end of main
